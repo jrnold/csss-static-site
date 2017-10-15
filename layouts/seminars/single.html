@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+
+<main>
+    <div class="seminar-meta">
+        <h1>{{ .Title }}</h1>
+
+        {{ .Date.Format "Monday, January 2, 2006" }}, {{ .Params.startTime }}&ndash;{{ .Params.endTime }}
+        <a href="{{ .Params.locationURL }}">{{ .Params.location }}</a>
+
+        {{ with .Params.speakers }}
+            {{ range . }}
+            <ul class="speakers">
+                <ul>
+                    <strong>{{ .name}}</strong>, {{ .title }}
+                    <i class="fa fa-glob fa-lg"></i>
+                    {{ with .homepage }}<a href="{{ . }}"><i class="fa fa-glob fa-lg"></i></a>{{ end }}
+                </ul>
+            </ul>
+            {{ end }}
+        {{ end }}
+    </div>
+
+    <p>
+        {{.Content}}
+    </p>
+</main>
+
+{{ partial "footer.html" . }}
