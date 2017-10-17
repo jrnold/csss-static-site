@@ -20,3 +20,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     endTime = "1:30 PM"
     location = "Savery Hall 409"
     locationURL = "https://www.washington.edu/maps/#!/sav"
+    directorName = Jeffrey Arnold
+    directorEmail = jrnold@uw.edu
