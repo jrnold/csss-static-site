@@ -5,7 +5,8 @@
         <div class="seminar-meta">
             <h1>{{ .Title }}</h1>
 
-            {{ .Date.Format "Monday, January 2, 2006" }}, {{ .Params.startTime }}&ndash;{{ .Params.endTime }}
+            {{ dateFormat "Monday, January 2, 2006" .Params.eventdate }},
+            {{ $.Param "startTime" }}&ndash;{{ $.Param "endTime" }}
             <a href="{{ .Params.locationURL }}">{{ .Params.location }}</a>
 
             {{ with .Params.speakers }}

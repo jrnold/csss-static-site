@@ -5,7 +5,7 @@ theme = "csss"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
-    seminars = "/:year/:month/:day/"
+    seminars = "/seminars/:year/:month/:day/"
 
 [[menu.main]]
     name = "About"
@@ -16,3 +16,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
     description = "CSSS Seminar Series"
+    currentQuarter = "Fall 2017"
+    startTime = "12:30 PM"
+    endTime = "1:30 PM"
+    location = "Savery 409"
+    locationURL = ""

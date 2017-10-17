@@ -1,15 +1,16 @@
-{{ define "main" }}
-  <main>
-      {{ .Content }}
-          <ul class="contents">
-          {{ range .Paginator.Pages }}
-              <li>{{.Title}}
-                  <div>
-                    {{ partial "summary.html" . }}
-                  </div>
-              </li>
-          {{ end }}
-          </ul>
-      {{ partial "pagination.html" . }}
-  </main>
-{{ end }}
+<h1>Seminars for {{ .Site.Params.currentQuarter }}</h1>
+
+<main>
+  <ul class="contents">
+  {{ range where .Site.Pages "Params.quarter" .Site.Params.currentQuarter }}
+      <li>
+          {{ dateFormat "Mon, January 2, 2006" .Params.eventdate }}: <a href="{{ .Permalink }}">{{ .Title }}</a>,
+          {{ range .Params.speakers }}{{ .name }} ({{ .title }}) {{ end }}
+          <p>
+              Abstract: {{- .Content -}}
+          </p>
+      </li>
+  {{ end }}
+  </ul>
+
+</main>
