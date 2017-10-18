@@ -4,13 +4,12 @@
 
 <main>
     <div class="container">
-          {{ range .Page.Params.weeks }}
-          <div class="seminar" id="{{ .date }}" href="{{ .date }}">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                  {{ dateFormat "Monday, Jan 2, 2006" .date }} {{ $.Param "startTime" }}&ndash;{{ $.Param "endTime" }}
-                  <h2>{{ .title }}</h2>
-                </div>
+        <div class="seminar-meta">
+            <h1>{{ .Title }}</h1>
+
+            {{ dateFormat "Monday, January 2, 2006" .Params.eventdate }},
+            {{ $.Param "startTime" }}&ndash;{{ $.Param "endTime" }}
+            <a href="{{ .Params.locationURL }}">{{ .Params.location }}</a>
 
                 <div class="panel-body">
                   {{ with .speakers }}

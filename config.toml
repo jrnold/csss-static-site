@@ -4,8 +4,9 @@ title = "CSSS Seminar Series"
 theme = "csss"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
+
 [permalinks]
-    seminars = "/:slug/"
+    seminars = "/seminars/:year/:month/:day/"
 
 [[menu.main]]
     name = "About"
@@ -20,5 +21,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     endTime = "1:30 PM"
     location = "Savery Hall 409"
     locationURL = "https://www.washington.edu/maps/#!/sav"
-    directorName = Jeffrey Arnold
-    directorEmail = jrnold@uw.edu
+    directorName = "Jeffrey Arnold"
+    directorEmail = "jrnold@uw.edu"
+    currentQuarter = "Fall 2017"
