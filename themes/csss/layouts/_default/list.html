@@ -9,8 +9,8 @@
 <ul>
   {{ range (where .Data.Pages "Section" "!=" "") }}
   <li>
-    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-    <a href="{{ .URL }}">{{ .Title }}</a>
+    <span class="date">{{ .Params.eventdate.Format "January 2, 2006" }}</span>
+    <a href="{{ .Paermlink }}">: {{ range .Params.speakers}}{{ .name }}, {{ end }} "{{ .Title }}"</a>
   </li>
   {{ end }}
 </ul>

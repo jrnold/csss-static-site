@@ -1,6 +1,5 @@
-<ul>
-    <strong>{{ .name}}</strong>, {{ .title }}
-    <i class="fa fa-glob fa-lg"></i>
+<ul class="speaker">
+    <span class="speaker-name">{{ .name }}</span>, <span class="speaker-title">{{ .title }}</span>
     {{ with .homepage }}<a href="{{ . }}"><i class="fa fa-globe"></i></a>{{ end }}
     {{ with .twitter }}<a href="{{ . }}"><i class="fa fa-twitter" aria-hidden="true"></i></i></a>{{ end }}
 </ul>

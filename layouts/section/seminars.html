@@ -1,16 +1,28 @@
+{{ partial "header.html" }}
+
 <h1>Seminars for {{ .Site.Params.currentQuarter }}</h1>
 
 <main>
-  <ul class="contents">
-  {{ range where .Site.Pages "Params.quarter" .Site.Params.currentQuarter }}
-      <li>
-          {{ dateFormat "Mon, January 2, 2006" .Params.eventdate }}: <a href="{{ .Permalink }}">{{ .Title }}</a>,
-          {{ range .Params.speakers }}{{ .name }} ({{ .title }}) {{ end }}
-          <p>
-              Abstract: {{- .Content -}}
-          </p>
-      </li>
-  {{ end }}
+    <div class="list-seminar">
+      
+    </div>
+    {{ range where .Site.Pages "Params.quarter" .Site.Params.currentQuarter }}
+        <li>
+            {{ dateFormat "Mon, January 2, 2006" .Params.eventdate }}: <a href="{{ .Permalink }}">{{ .Title }}</a>,
+            {{ range .Params.speakers }}{{ .name }} ({{ .title }}) {{ end }}
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ .Params.eventdate }}-abstract" aria-expanded="false" aria-controls="collapseExample">
+              Abstract
+            </button>
+            <div class="collapse" id="{{ .Params.eventdate }}-abstract">
+              <div class="card card-block">
+                 {{ .Content }}
+              </div>
+            </div>
+        </li>
+
+    {{ end }}
   </ul>
 
 </main>
+
+{{ partial "footer.html" }}

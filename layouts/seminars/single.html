@@ -1,34 +1,35 @@
 {{ partial "header.html" . }}
 
-<h1>{{ .Title }}</h1>
+<div class="container>">
+    <h1>{{ .Title }}</h1>
+    <main>
+        <div class="container">
+            <div class="seminar-meta">
+                <h1>{{ .Title }}</h1>
 
-<main>
-    <div class="container">
-        <div class="seminar-meta">
-            <h1>{{ .Title }}</h1>
+                {{ dateFormat "Monday, January 2, 2006" .Params.eventdate }},
+                {{ $.Param "startTime" }}&ndash;{{ $.Param "endTime" }}
+                <a href="{{ .Params.locationURL }}">{{ .Params.location }}</a>
 
-            {{ dateFormat "Monday, January 2, 2006" .Params.eventdate }},
-            {{ $.Param "startTime" }}&ndash;{{ $.Param "endTime" }}
-            <a href="{{ .Params.locationURL }}">{{ .Params.location }}</a>
-
-                <div class="panel-body">
-                  {{ with .speakers }}
-                      {{ range . }}
-                      <ul class="speakers">
-                        {{ partial "seminars/speaker.html" . }}
-                      </ul>
+                    <div class="panel-body">
+                      {{ with .speakers }}
+                          {{ range . }}
+                          <ul class="speakers">
+                            {{ partial "seminars/speaker.html" . }}
+                          </ul>
+                          {{ end }}
                       {{ end }}
-                  {{ end }}
-                  {{ if isset(.abstract)}}
-                      <p>
-                          {{ .abstract | markdownify }}
-                      </p>
-                  {{ end }}
+                      {{ if isset(.abstract)}}
+                          <p>
+                              {{ .abstract | markdownify }}
+                          </p>
+                      {{ end }}
+                    </div>
                 </div>
             </div>
+            {{ end }}
         </div>
-        {{ end }}
-    </div>
-</main>
+    </main>
+</div>
 
 {{ partial "footer.html" . }}
