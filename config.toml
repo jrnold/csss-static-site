@@ -4,6 +4,7 @@ title = "CSSS Seminar Series"
 theme = "csss"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
+
 [permalinks]
     seminars = "/seminars/:year/:month/:day/"
 
@@ -16,8 +17,13 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
     description = "CSSS Seminar Series"
+    email = "jrnold@uw.edu"
+
     currentQuarter = "Fall 2017"
     startTime = "12:30 PM"
     endTime = "1:30 PM"
     location = "Savery 409"
     locationURL = ""
+
+[social]
+    twitter = "UWCSSS"
